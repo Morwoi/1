@@ -1,0 +1,76 @@
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+  }
+  
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 25px;
+  }
+    /* Change the color of links on hover */
+    .topnav  a#Nav_Gelb:hover {
+      background-color: rgb(247, 243, 8);
+      color: black;
+      }
+
+    .topnav  a#Nav_Weiss:hover {
+      background-color: rgb(241, 241, 234);
+      color: black;
+      }
+
+    .topnav  a#Nav_Grün:hover {
+      background-color: rgb(16, 247, 8);
+      color: black;
+      }
+
+    .topnav  a#Nav_Blau:hover {
+      background-color: rgb(8, 44, 247);
+      color: black;
+      }
+     .topnav  a#Nav_Violett:hover {
+      background-color: rgb(191, 8, 247);
+      color: black;
+      }
+
+    .topnav  a#Nav_Rot:hover {
+      background-color: rgb(233, 8, 8);
+      color: black;
+      }
+
+    .topnav  a#Nav_Orange:hover {
+      background-color: rgb(247, 191, 8);
+      color: black;
+      }
+
+    .topnav  a#Nav_Rosa:hover {
+      background-color: rgb(247, 8, 187);
+      color: black;
+      }
+
+    .topnav  a#Nav_löschen:hover {
+      background-color: rgb(88, 87, 99);
+      color: black;
+      }
+
+    .topnav  a#Nav_drucken:hover {
+      background-color: rgb(88, 87, 99);
+      color: black;
+      }
+
+    
+
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+

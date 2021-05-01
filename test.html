@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <link href="style.css" rel="Stylesheet" />
-    <script src='script.js'></script>
+    <script src='Nav Click Funktion.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta charset="UTF-8">
 
@@ -11,22 +11,19 @@
 </head>
 <body>
     <div class="topnav">
-        <a class="active" href="#home">Home</a>
-        <a href="#Gelb" id="Nav_Gelb">Gelb</a>
-        <a href="#Weiss"id="Nav_Weiss">Weiss</a>
-        <a href="#Grün"id="Nav_Grün">Grün</a>
-        <a href="#Blau"id="Nav_Blau">Blau</a>
-        <a href="#Violett"id="Nav_Violett">Violett</a>
-        <a href="#Rot"id="Nav_Rot">Rot</a>
-        <a href="#Orange"id="Nav_Orange">Orange</a>
-        <a href="#Rosa"id="Nav_Rosa">Rosa</a>
-        <a href="#Löschen"id="Nav_löschen">löschen</a>
+        <a class="active" href="#home" id="Nav_Home" onClick="nav_home_click();">Home</a>
+        <a href="#Gelb" id="Nav_Gelb" onClick="nav_gelb_click();">Gelb</a>
+        <a href="#Weiss"id="Nav_Weiss" onClick="nav_weiss_click();">Weiss</a>
+        <a href="#Grün"id="Nav_Grün" onClick="nav_grün_click();" >Grün</a>
+        <a href="#Blau"id="Nav_Blau" onClick="nav_blau_click();">Blau</a>
+        <a href="#Violett"id="Nav_Violett" onClick="nav_violett_click();">Violett</a>
+        <a href="#Rot"id="Nav_Rot" onClick="nav_rot_click();">Rot</a>
+        <a href="#Orange"id="Nav_Orange" onClick="nav_orange_click();">Orange</a>
+        <a href="#Rosa"id="Nav_Rosa" onClick="nav_rosa_click();">Rosa</a>
+        <a href="#Löschen"id="Nav_löschen" >löschen</a>
         <a href="#Löschen"id="Nav_drucken">drucken</a>
       </div>
     
-      <input type="button" id="toggler" value="Toggler" onClick="action();" />
-        
-      <input type="button" id="togglee" value="Togglee" />
-
+    
 </body>
 </html>

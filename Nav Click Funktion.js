@@ -1,5 +1,6 @@
   
 // Nav Click Funktion 
+//#region
 function nav_home_click(){
     $(Nav_Home).addClass('active');
     $(Nav_Home).siblings().removeClass('active');
@@ -43,6 +44,11 @@ function nav_rosa_click(){
     $(Nav_Rosa).addClass('active');
     $(Nav_Rosa).siblings().removeClass('active');
 }
+function nav_türkis_click(){
+    $(Nav_Türkis).addClass('active');
+    $(Nav_Türkis).siblings().removeClass('active');
+}
+//#endregion
 
 
 
@@ -51,8 +57,9 @@ function nav_rosa_click(){
 
 
   
-  /*
 
+
+  /* Test for Hiding
   var hidden = false;
     function action() {
         hidden = !hidden;

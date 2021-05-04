@@ -1,3 +1,7 @@
+<?php
+    include 'dbh.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +17,8 @@
     <title>Tech Lead Morwoi</title>
 </head>
 <body>
+<!-- Start of Header -->
+   
     <div class="topnav">
         <a class="active" href="#home" id="Nav_Home" onClick="nav_home_click();">Home</a>
         <a href="#Gelb" id="Nav_Gelb" onClick="nav_gelb_click();">Gelb</a>
@@ -27,7 +33,10 @@
         <a href="#Löschen"id="Nav_löschen" >löschen</a>
         <a href="#Löschen"id="Nav_drucken">drucken</a>
       </div>
+
+<!-- End of Header -->
     
+<!-- Start of Tabel -->
     <table class="tbl_customer">
         <thead>
             <th>ID</th>
@@ -69,7 +78,7 @@
               
         </tbody>
     </table>
-
+ <!-- End of Tabel -->
     <div id="comments">  </div>
     <button>Show more comments</button>
 </body>

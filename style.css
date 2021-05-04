@@ -53,6 +53,10 @@
       background-color: rgb(247, 8, 187);
       color: black;
       }
+    .topnav  a#Nav_Türkis:hover {
+      background-color: rgb(7, 223, 252);
+      color: black;
+      }
 
     .topnav  a#Nav_löschen:hover {
       background-color: rgb(88, 87, 99);

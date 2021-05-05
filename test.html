@@ -1,5 +1,7 @@
 <?php
     include 'dbh.php';
+    $sql = "SELECT * FROM comments LIMIT 2";
+    $result = mysqli_query($conn, $sql);
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +17,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Lead Morwoi</title>
+
 </head>
 <body>
 <!-- Start of Header -->
@@ -35,71 +38,26 @@
       </div>
 
 <!-- End of Header -->
-    
-<!-- Start of Tabel -->
-    <table class="tbl_customer">
-        <thead>
-            <th>ID</th>
-            <th>Nummer</th>
-            <th>Nachnahme</th>
-            <th>Name</th>
-            <th>Telefonnummer</th>
-            <th>Adresse</th>
-            <th>Ort</th>
-            <th>Plz</th>
-            <th>Bemerkung</th>
 
-        </thead>
-        <tbody>
 
-            <tr>
-                <td>1</td>   
-                <td>1</td>
-                <td>Ender</td>
-                <td>Günter</td>
-                <td>0664/12345678</td>
-                <td>Kiesquellenweg 10</td>
-                <td>Dornbirn</td>
-                <td>6850</td>
-                <td></td>
-            </tr> 
-
-            <tr>
-                <td>2</td>   
-                <td>2</td>
-                <td>Manuel</td>
-                <td>Hansel</td>
-                <td>0664/23159863540</td>
-                <td>Brengenzerstr. 1</td>
-                <td>Bregenz</td>
-                <td>6666</td>
-                <td></td>
-            </tr>  
-              
-        </tbody>
-    </table>
- <!-- End of Tabel -->
+  <!--FETCHING DATA FROM EACH 
+                    ROW OF EVERY COLUMN-->
+  
     <div id="comments"> 
-        <?php 
-            $sql = "SELECT * FROM comments LIMIT 2";
-            $result = mysqli_query($conn, $sql);
-            if(mysqli_num_rows($result) > 0) {
-               while ($row = mysqli_fetch_assoc($result)) {
-                   
-                echo "<p>";
-                echo $row['author'];
-                echo "<br>";
-                echo $row['message'];
-                echo '</p>';
-
-               }
-            } 
-            else { 
-               echo "Teher are no comments!";
-        
-           }
-
-        ?>
+    <?php   // LOOP TILL END OF DATA 
+                while($rows=$result->fetch_assoc())
+                {
+             ?>
+            
+            <tr>
+               
+                <td><?php echo $rows['author'];?></td>
+                <td><?php echo $rows['message'];?></td>
+         
+            </tr>
+            <?php
+                }
+             ?>
     </div>
     <button>Show more comments</button>
 </body>

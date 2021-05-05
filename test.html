@@ -1,6 +1,6 @@
 <?php
     include 'dbh.php';
-    $sql = "SELECT * FROM comments LIMIT 2";
+    $sql = "SELECT * FROM comments";
     $result = mysqli_query($conn, $sql);
 ?>
 
@@ -43,22 +43,26 @@
   <!--FETCHING DATA FROM EACH 
                     ROW OF EVERY COLUMN-->
   
-    <div id="comments"> 
-    <?php   // LOOP TILL END OF DATA 
-                while($rows=$result->fetch_assoc())
+    <table class="tbl_customer">
+        <thead>
+            <th> Author </th>
+            <th> Nachricht </th>
+        </thead> 
+
+        <?php   // LOOP TILL END OF DATA 
+            while($rows=$result->fetch_assoc())
                 {
-             ?>
-            
-            <tr>
-               
-                <td><?php echo $rows['author'];?></td>
-                <td><?php echo $rows['message'];?></td>
-         
-            </tr>
-            <?php
-                }
-             ?>
-    </div>
-    <button>Show more comments</button>
+        ?>
+                <tbody>
+                    <tr>
+                        <td><?php echo $rows['author'];?></td>
+                        <td><?php echo $rows['message'];?></td>
+                    </tr>
+                    <?php
+                        }
+                    ?>
+                </tbody> 
+    </table>
+
 </body>
 </html>

@@ -1,7 +1,6 @@
 <?php
     include 'dbh.php';
-    $sql = "SELECT * FROM comments";
-    $result = mysqli_query($conn, $sql);
+   
 ?>
 
 <!DOCTYPE html>
@@ -50,8 +49,10 @@
         </thead> 
 
         <?php   // LOOP TILL END OF DATA 
+            $sql = "SELECT * FROM comments";
+            $result = mysqli_query($conn, $sql);
             while($rows=$result->fetch_assoc())
-                {
+        {
         ?>
                 <tbody>
                     <tr>
@@ -59,7 +60,7 @@
                         <td><?php echo $rows['message'];?></td>
                     </tr>
                     <?php
-                        }
+        }
                     ?>
                 </tbody> 
     </table>

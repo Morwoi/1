@@ -1,17 +1,17 @@
-<?php
-    include 'dbh.php';
-   
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <link href="style.css" rel="Stylesheet" />
     <script src='Nav Click Funktion.js'></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+
     <meta charset="UTF-8">
     <script>
-
+     link.href="Database5.php"
     </script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,33 +37,8 @@
       </div>
 
 <!-- End of Header -->
+    
 
-
-  <!--FETCHING DATA FROM EACH 
-                    ROW OF EVERY COLUMN-->
-  
-    <table class="tbl_customer">
-        <thead>
-            <th> Author </th>
-            <th> Nachricht </th>
-        </thead> 
-
-        <?php   // LOOP TILL END OF DATA 
-            $sql = "SELECT * FROM comments";
-            $result = mysqli_query($conn, $sql);
-            while($rows=$result->fetch_assoc())
-        {
-        ?>
-                <tbody>
-                    <tr>
-                        <td><?php echo $rows['author'];?></td>
-                        <td><?php echo $rows['message'];?></td>
-                    </tr>
-                    <?php
-        }
-                    ?>
-                </tbody> 
-    </table>
 
 </body>
 </html>

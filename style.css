@@ -81,21 +81,15 @@
   background-color: #DDEFEF;
   border: solid 1px #DDEEEE;
   color: #336B6B;
-  padding: 10px;
+  padding: 5px;
   text-align: left;
   text-shadow: 1px 1px 1px #fff;
+  
 }
 
 /*Table design  */
 .tbl_customer {
-  border: solid 1px #DDEEEE;
-  border-collapse: collapse;
-  border-spacing: 0;
-  font: normal 18px Arial, sans-serif;
-}
-
-.tbl_customer tbl_input_Heder {
-  border: solid 1px #07e9e9;
+  border: solid 1px #1ec9c9;
   border-collapse: collapse;
   border-spacing: 0;
   font: normal 18px Arial, sans-serif;
@@ -103,8 +97,8 @@
 
 /* Body design */
 .tbl_customer tbody td {
-  border: solid 1px #DDEEEE;
-  color: #333;
+  border: solid 1px #e5e7e7;
+  color: rgb(3, 3, 3);
   padding: 10px;
   text-shadow: 1px 1px 1px #fff;
 }

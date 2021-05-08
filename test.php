@@ -37,9 +37,6 @@
 <!-- End of Header -->
 <br>
 <br>
-<br>
-<br>
-<input><input>
 
 <table class="tbl_customer">
        <thead>
@@ -52,18 +49,18 @@
             <th> PLZ </th>
             <th> Bemerkung </th>
             <th> Gebiet </th>
-
         </thead> 
-        <tbody> <tr class="tbl_input_Heder"></tbody> 
-        <td><Input class="tbl_input_Id"></Input></td>
-        <td><Input class="tbl_input_Nummer"></Input></td>
+
+        <tbody id="tbl_input"> 
+        <td><Input class="tbl_input_Id" size="5"></Input></td>
+        <td><Input class="tbl_input_Nummer" size="5"></Input></td>
         <td><Input class="tbl_input_Id"></Input></td>
         <td><Input class="tbl_input_Name"></Input></td>
         <td><Input class="tbl_input_Adresse"></Input></td>
-        <td><Input class="tbl_input_Ort"></Input></td>
-        <td><Input class="tbl_input_PLZ"></Input></td>
+        <td><Input class="tbl_input_Ort" size="5"></Input></td>
+        <td><Input class="tbl_input_PLZ" size="5"></Input></td>
         <td><Input class="tbl_input_Bemerkung"></Input></td>
-        <td><Input class="tbl_input_Gebiet"></Input></td>
+        <td><Input class="tbl_input_Gebiet"size="5"></Input></td>
         </tbody>
 
         <?php   // LOOP TILL END OF DATA 

@@ -38,6 +38,9 @@
 <br>
 <br>
 
+
+<!-- Start of Tabel  -->
+
 <table class="tbl_customer">
        <thead>
             <th> Id </th>
@@ -63,8 +66,11 @@
         <td><Input class="tbl_input_Gebiet"size="5"></Input></td>
         </tbody>
 
+        
+<!-- Logik for SQL DATA  -->
+
         <?php   // LOOP TILL END OF DATA 
-            $sql = "SELECT * FROM customer";
+            $sql = "SELECT * FROM Customer";
             $result = mysqli_query($conn, $sql);
             while($rows=$result->fetch_assoc())
         {
@@ -88,6 +94,7 @@
     </table>
 
 
+<!-- End of Tabel  -->
 
 
 </body>

@@ -70,7 +70,7 @@
 <!-- Logik for SQL DATA  -->
 
         <?php   // LOOPTILL END OF DATA 
-            $sql = "SELECT * FROM Customer we";
+            $sql = "SELECT * FROM Customer";
             $result = mysqli_query($conn, $sql);
             while($rows=$result->fetch_assoc())
         {

@@ -69,8 +69,8 @@
         
 <!-- Logik for SQL DATA  -->
 
-        <?php   // LOOP TILL END OF DATA 
-            $sql = "SELECT * FROM Customer";
+        <?php   // LOOPTILL END OF DATA 
+            $sql = "SELECT * FROM Customer we";
             $result = mysqli_query($conn, $sql);
             while($rows=$result->fetch_assoc())
         {

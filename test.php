@@ -6,10 +6,7 @@
     <link href="style.css" rel="Stylesheet" />
     <script src='Nav Click Funktion.js'></script>
     
-    <script
-  src="https://code.jquery.com/jquery-3.6.0.min.js"
-  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-  crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -93,6 +90,37 @@
                 </tbody> 
     </table>
 
+    <div class="ud_box">
+        
+        <form id="ud_form">
+            <input type="text" name="name" placeholder="Name">
+            <input type="text" name="nachname" placeholder="Nachname">
+            <input type="submit" name="senden" id="senden">
+
+        </form>
+    
+    </div>
+    <div class="ud_box" id="ud_output"></div>
+
+
+    <script>
+    
+    $('#ud_form').submit(function(event){
+        event.preventDefault();
+        $.ajax({
+            type: 'GET',
+            url: 'dbh.php',
+            data: $(this).serialize(),
+            success: function(data){
+                $('#ud_output').html(data);
+            }
+        });
+
+        $('#ud_form')[0].reset();
+
+    });
+    
+    </Script>
 
 <!-- End of Tabel  -->
 

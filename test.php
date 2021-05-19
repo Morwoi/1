@@ -51,17 +51,38 @@
             <th> Gebiet </th>
         </thead> 
 
-        <tbody id="tbl_input"> 
-        <td><Input class="tbl_input_Id" size="5"></Input></td>
-        <td><Input class="tbl_input_Nummer" size="5"></Input></td>
-        <td><Input class="tbl_input_Id"></Input></td>
-        <td><Input class="tbl_input_Name"></Input></td>
-        <td><Input class="tbl_input_Adresse"></Input></td>
-        <td><Input class="tbl_input_Ort" size="5"></Input></td>
-        <td><Input class="tbl_input_PLZ" size="5"></Input></td>
-        <td><Input class="tbl_input_Bemerkung"></Input></td>
-        <td><Input class="tbl_input_Gebiet"size="5"></Input></td>
-        </tbody>
+        <form id="tbl_input"> 
+        <td><Input name="tbl_input_Id" size="5"></Input></td>
+        <td><Input type="text" name="tbl_input_Nummer" size="5"></Input></td>
+        <td><Input type="text" name="tbl_input_Name"></Input></td>
+        <td><Input type="text" name="tbl_input_Adresse"></Input></td>
+        <td><Input type="number" name="tbl_input_Telefonnummer"></Input></td>
+        <td><Input type="text" name="tbl_input_Ort" size="5"></Input></td>
+        <td><Input type="number" name="tbl_input_PLZ" size="5"></Input></td>
+        <td><Input type="tex" name="tbl_input_Bemerkung"></Input></td>
+        <td><Input type="text" name="tbl_input_Gebiet"size="5"></Input></td>
+
+        <input type="submit" name="senden" id="senden">
+
+        <script>
+    
+    $('#tbl_input').submit(function(event){
+        event.preventDefault();
+        $.ajax({
+            type: 'GET',
+            url: 'dbh.php',
+            data: $(this).serialize(),
+            success: function(data){
+                $('#ud_output').html(data);
+            }
+        });
+
+        $('#tbl_input')[0].reset();
+
+    });
+    
+    </Script>
+        </form>
 
         
 <!-- Logik for SQL DATA  -->
@@ -93,36 +114,20 @@
     <div class="ud_box">
         
         <form id="ud_form">
-            <input type="text" name="name" placeholder="Name">
+            <input type="text" name="Name" placeholder="Name">
             <input type="text" name="nachname" placeholder="Nachname">
-            <input type="submit" name="senden" id="senden">
+           
 
         </form>
     
     </div>
-    <div class="ud_box" id="ud_output"></div>
+   
 
 
-    <script>
     
-    $('#ud_form').submit(function(event){
-        event.preventDefault();
-        $.ajax({
-            type: 'GET',
-            url: 'dbh.php',
-            data: $(this).serialize(),
-            success: function(data){
-                $('#ud_output').html(data);
-            }
-        });
-
-        $('#ud_form')[0].reset();
-
-    });
-    
-    </Script>
 
 <!-- End of Tabel  -->
+
 
 </body>
 </html>

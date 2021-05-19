@@ -125,5 +125,90 @@
 <!-- End of Tabel  -->
 
 
+
+<div id="mforminsert">
+
+  <form id="forminsert" name="forminsert" method="post"  enctype="multipart/form-data" style="margin:0; padding:0; float:left;" onsubmit="return CommonFunction(this,'savedb_file.php', 'loaddata.php','forminsert');">	
+  
+  <input type="hidden" name="action" value="insert" />
+  <input type="hidden" name="emp_id" value="0" />
+  <p class="errormsg" style="display:none;">&nbsp;</p>
+  <table border="1" cellpadding="2" cellspacing="1" style="border-collapse:collapse; font:12px Verdana, Arial, Helvetica, sans-serif;">
+  
+  <tr>
+  <td align="left"> First Name : </td>
+  <td> <input type="text" name="fname" value="" size="20" /></td>
+  </tr>
+  
+  <tr>
+  <td align="left"> Middle Name : </td>
+  <td> <input type="text" name="mname" value="" size="20" /></td>
+  </tr>
+  
+  <tr>
+  <td align="left"> Last Name : </td>
+  <td> <input type="text" name="lname" value="" size="20" /></td>
+  </tr>
+  
+  <tr>
+  <td align="left"> Email : </td>
+  <td> <input type="text" name="email" value="" size="25"/></td>
+  </tr>
+  
+  
+  <tr>
+  <td align="left"> Contact No : </td>
+  <td> <input type="text" name="contact" value="" size="20"/></td>
+  </tr>
+  
+  <tr>
+  <td align="left"> Designation : </td>
+  <td> <input type="text" name="designation" value="" size="20" /></td>
+  </tr>
+  
+  <tr>
+  <td align="left"> Gender : </td>
+  <td> 
+  <input type="radio" name="gender" value="Male" checked="checked" /> Male &nbsp;&nbsp;<input type="radio" name="gender" value="Female" /> Female
+  </td>
+  </tr>
+  
+  <tr>
+  <td align="left"> Living Country : </td>
+  <td> 
+  <?php
+  $country_array = array("India", "USA","UK");
+  ?>
+  <select name="country">
+   <?php
+    foreach($country_array as $val){
+	
+	
+    ?>
+     <option value="<?php echo $val; ?>"><?php echo $val; ?></option>
+    <?php
+    }
+    ?>
+  </select>
+  </td>
+  </tr>
+  
+  
+  
+  <tr>
+  <td align="left"> Comments : </td>
+  <td> <textarea name="comments" cols="20" rows="5"></textarea></td>
+  </tr>
+  
+  <tr>
+  <td align="left" colspan="2"> <input type="submit" name="Sub" value="Insert" /> &nbsp; <input type="reset"  value="Reset" /> </td>
+  </tr>
+  
+  </table>
+  </form>
+ 
+</div>
+
+
 </body>
 </html>

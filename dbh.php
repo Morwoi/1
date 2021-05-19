@@ -13,19 +13,19 @@ if ($conn->connect_error) {
   
 
 
-  // Function to insert Data
+  // Function to insert Data from TBL Header Input 
 
   if(isset($_GET['tbl_input_Nummer']) && isset($_GET['tbl_input_Name']))  {
 
     //JAVASCRIPT AUS DEM CODE LÖSCHEN 
     $nummer= htmlspecialchars( $_GET['tbl_input_Nummer']);
     $name= htmlspecialchars($_GET['tbl_input_Name']);
-    $adresse= htmlspecialchars($_GET['tbl_input_Name']);
-    $telefon= htmlspecialchars($_GET['tbl_input_Name']);
-    $ort= htmlspecialchars($_GET['tbl_input_Name']);
-    $plz= htmlspecialchars($_GET['tbl_input_Name']);
-    $bemerkung= htmlspecialchars($_GET['tbl_input_Name']);
-    $gebiet= htmlspecialchars($_GET['tbl_input_Name']);
+    $adresse= htmlspecialchars($_GET['tbl_input_Adresse']);
+    $telefon= htmlspecialchars($_GET['tbl_input_Telefonnummer']);
+    $ort= htmlspecialchars($_GET['tbl_input_Ort']);
+    $plz= htmlspecialchars($_GET['tbl_input_PLZ']);
+    $bemerkung= htmlspecialchars($_GET['tbl_input_Bemerkung']);
+    $gebiet= htmlspecialchars($_GET['tbl_input_Gebiet']);
   
 
     //SQL STATMENET 

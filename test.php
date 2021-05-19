@@ -65,7 +65,20 @@
         <input type="submit" name="senden" id="senden">
 
         <script>
+
+    function required(inputtx) 
+   {
+     if (tbl_input_Nummer.value.length == 0)
+      { 
+         alert("Not 0");  	
+         return false; 
+      }  	
+      return true; 
+
+    } 
     
+
+   if(required==true){  
     $('#tbl_input').submit(function(event){
         event.preventDefault();
         $.ajax({
@@ -80,6 +93,8 @@
         $('#tbl_input')[0].reset();
 
     });
+    }
+    
     
     </Script>
         </form>

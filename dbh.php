@@ -27,7 +27,7 @@ if ($conn->connect_error) {
     $bemerkung= htmlspecialchars($_GET['tbl_input_Bemerkung']);
     $gebiet= htmlspecialchars($_GET['tbl_input_Gebiet']);
   
-
+    
     //SQL STATMENET 
     $sql_insert = 'INSERT INTO customer SET
 
@@ -62,8 +62,6 @@ if ($conn->connect_error) {
 
    
   }
-  else{
-    "alert('Nummer und Name dürfen nicht leer sein')";
-  }
+
 
   ?>

@@ -54,7 +54,7 @@
         <form id="tbl_input"> 
         <td><Input name="tbl_input_Id" size="5"></Input></td>
         <td><Input type="text" name="tbl_input_Nummer" size="5"></Input></td>
-        <td><Input type="text" name="tbl_input_Name"></Input></td>
+        <td><Input type="text" name="tbl_input_Name" ></Input></td>
         <td><Input type="text" name="tbl_input_Adresse"></Input></td>
         <td><Input type="number" name="tbl_input_Telefonnummer"></Input></td>
         <td><Input type="text" name="tbl_input_Ort" size="5"></Input></td>
@@ -65,7 +65,6 @@
         <input type="submit" name="senden" id="senden">
 
         <script>
-
     function required(inputtx) 
    {
      if (tbl_input_Nummer.value.length == 0)
@@ -74,7 +73,7 @@
          return false; 
       }  	
       return true; 
-
+      
     } 
     
 

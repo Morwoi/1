@@ -37,7 +37,7 @@
 
 
 <!-- Start of Tabel  -->
-
+<!-- Head  -->
 <table class="tbl_customer">
        <thead>
             <th> Id </th>
@@ -50,7 +50,7 @@
             <th> Bemerkung </th>
             <th> Gebiet </th>
         </thead> 
-
+<!-- Tabel Input -->
         <form id="tbl_input"> 
         <td><Input name="tbl_input_Id" size="5"></Input></td>
         <td><Input type="text" name="tbl_input_Nummer" size="5"></Input></td>
@@ -65,7 +65,11 @@
         <input type="submit" name="senden" id="senden">
 
         <script>
-    function required(inputtx) 
+          
+// Error in this Code when Site is Reload and Input is empty DB still calls Entry
+// When you press "Senden" with empty Input sill calls DB Entry 
+     
+    function required(tbl_input_Nummer) 
    {
      if (tbl_input_Nummer.value.length == 0)
       { 
@@ -88,16 +92,19 @@
                 $('#ud_output').html(data);
             }
         });
-
         $('#tbl_input')[0].reset();
 
     });
-    }
-    
-    
-    </Script>
-        </form>
+   }
 
+// Error Ende
+   
+    </Script>
+
+
+
+        </form>
+<!-- Tabel Input End -->
         
 <!-- Logik for SQL DATA  -->
 
@@ -107,6 +114,7 @@
             while($rows=$result->fetch_assoc())
         {
         ?>
+<!-- Fill Tabel-->       
                 <tbody>
                     <tr>
                         <td><?php echo $rows['Key'];?></td>
@@ -125,23 +133,6 @@
                 </tbody> 
     </table>
 
-    <div class="ud_box">
-        
-        <form id="ud_form">
-            <input type="text" name="Name" placeholder="Name">
-            <input type="text" name="nachname" placeholder="Nachname">
-           
-
-        </form>
-    
-    </div>
-   
-
-
-    
-
 <!-- End of Tabel  -->
-
-
 </body>
 </html>

@@ -42,26 +42,9 @@ if ($conn->connect_error) {
 
     //SQL EINFÜGEN
     $insert = mysqli_query($conn, $sql_insert);
-
-    // SQL Statment SELECT
-
-    /*
-    $select ='SELECT * FROM customer';
-
-
-    //SQL EINFÜGEN
-    $insert = mysqli_query($conn, $select);
-    
-    while($data = mysqli_fetch_array($insert))
-    {
-      echo '<ul>';
-      echo '<li>'.$data['Name'].', '.$data['Adresse'].'</li>';
-      echo '</ul>';
-    }
-    */
-
    
   }
+ 
 
 
   ?>

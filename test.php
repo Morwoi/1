@@ -209,6 +209,87 @@
  
 </div>
 
+<script type="text/javascript">
+function InputFieldValidations(theForm) {
+
+
+    if (theForm.fname.value == "") {
+	alert("Please Enter Your First Name.");
+	theForm.fname.focus();
+	return (false);
+    }
+	
+	if (theForm.mname.value == "") {
+	alert("Please Enter Your Middle Name.");
+	theForm.mname.focus();
+	return (false);
+    }
+	
+	if (theForm.lname.value == "") {
+	alert("Please Enter Your Last Name.");
+	theForm.lname.focus();
+	return (false);
+    }
+	
+	
+    if (theForm.email.value == "") {
+	alert("Please Enter Your Email Address.");
+	theForm.email.focus();
+	return (false);
+    }
+    
+    if  (theForm.email.value != "") {   
+    var eresult
+    var str=theForm.email.value
+    var filter=/^([\\w-]+(?:\\.[\\w-]+)*)@((?:[\\w-]+\\.)*\\w[\\w-]{0,66})\\.([a-z]{2,6}(?:\\.[a-z]{2})?)$/i
+	if (!filter.test(str)) {
+	    alert("Please enter a valid Email address!")
+	    theForm.email.focus();
+	    eresult=false;
+	    return (eresult);
+	}	
+    }   
+    
+    if (theForm.contact.value == "") {
+	alert("Please Enter Your Contact Number.");
+	theForm.contact.focus();
+	return (false);
+    }
+	
+	if (theForm.designation.value == "") {
+	alert("Please Enter Your Designation.");
+	theForm.designation.focus();
+	return (false);
+    }
+	
+	
+	if (theForm.comments.value == "") {
+	alert("Please write your message/comments in message box.");
+	theForm.comments.focus();
+	return (false);
+    }
+    
+   
+  
+  return true;
+  
+}
+
+</script>
+
+<script type="text/javascript">
+
+function ClearFields(theForm){
+
+	theForm.fname.value="";
+	theForm.mname.value="";
+	theForm.lname.value="";
+	theForm.email.value="";
+	theForm.contact.value="";
+	theForm.designation.value="";
+	theForm.comments.value="";
+}
+</script>
 
 </body>
 </html>

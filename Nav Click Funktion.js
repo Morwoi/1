@@ -1,5 +1,5 @@
   
-// Nav Click Funktion 
+/* Nav Click Funktion vor active head */
 //#region
 function nav_home_click(){
     $(Nav_Home).addClass('active');

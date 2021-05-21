@@ -103,7 +103,7 @@
     <script>
           
           // Error in this Code when Site is Reload and Input is empty DB still calls Entry
-                
+          // how to prevent input via URL to sql
 
           $(document).ready(function() {
     $("#tbl_input").submit( function() {

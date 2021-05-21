@@ -44,6 +44,8 @@ if ($db->connect_error) {
     //SQL EINFÜGEN
     $insert = mysqli_query($db, $sql_insert);
     // SQL 
+
+    header("location: test.php");
   }
  
 

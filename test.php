@@ -52,15 +52,15 @@
         </thead> 
 <!-- Tabel Input -->
         <form id="tbl_input"> 
-        <td><Input name="tbl_input_Id" size="5"></Input></td>
-        <td><Input type="text" name="tbl_input_Nummer" size="5"></Input></td>
-        <td><Input type="text" name="tbl_input_Name" ></Input></td>
-        <td><Input type="text" name="tbl_input_Adresse"></Input></td>
-        <td><Input type="number" name="tbl_input_Telefonnummer"></Input></td>
-        <td><Input type="text" name="tbl_input_Ort" size="5"></Input></td>
-        <td><Input type="number" name="tbl_input_PLZ" size="5"></Input></td>
-        <td><Input type="tex" name="tbl_input_Bemerkung"></Input></td>
-        <td><Input type="text" name="tbl_input_Gebiet"size="5"></Input></td>
+        <td><Input name="tbl_input_Id" size="5"/></td>
+        <td><Input type="text" name="tbl_input_Nummer" size="5"/></td>
+        <td><Input type="text" name="tbl_input_Name"/></td>
+        <td><Input type="text" name="tbl_input_Adresse"/></td>
+        <td><Input type="number" name="tbl_input_Telefonnummer"/></td>
+        <td><Input type="text" name="tbl_input_Ort" size="5"/></td>
+        <td><Input type="number" name="tbl_input_PLZ" size="5"/></td>
+        <td><Input type="tex" name="tbl_input_Bemerkung"/></td>
+        <td><Input type="text" name="tbl_input_Gebiet"size="5"/></td>
 
         <input type="submit" name="senden" id="senden">
 
@@ -71,7 +71,7 @@
      
     function required(tbl_input_Nummer) 
    {
-     if (tbl_input_Nummer.value.length == 0)
+     if (tbl_input_Nummer.value == "")
       { 
          alert("Not 0");  	
          return false; 

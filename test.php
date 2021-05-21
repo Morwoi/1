@@ -67,7 +67,8 @@
         <td><Input type="tex" name="input_Bemerkung" placeholder="Nummer"/></td>
         <td><Input type="text" name="input_Gebiet"size="5" placeholder="Nummer"/></td>
 
-        <input type="submit" name="senden" id="senden">
+       <input type="submit" name="senden" id="senden"> 
+
         </form>
 
 </tbody>
@@ -102,45 +103,43 @@
     </table>
 
     <script>
-          
-          // Error in this Code when Site is Reload and Input is empty DB still calls Entry
-          // how to prevent input via URL to sql
 
-          $(document).ready(function() {
-    $("#tbl_input").submit( function() {
-        if($("#test1").val() == "")
-        {
-            alert("Number Field is missing");
-            return false;
-        }
-        if($("#test2").val() == "")
-        {
-            alert("Name Field is missing");
-            return false;
-        }
-        else {
-            $('#tbl_input').submit(function(event){
-                  event.preventDefault();
-                  $.ajax({
-                      type: 'GET',
-                      url: 'dbh.php',
-                      data: $(this).serialize(),
-                      success: function(data){
-                          $('#ud_output').html(data);
-                      }
-                  });
-            
-              });                
-        }
-
-    });
-    
-});
-          
-                     
         
-                 
-          // Error Ende
+        // Wrapp this in a Button in NAV Click 
+          
+          $(document).ready(function() {
+        $("#tbl_input").submit( function() {
+            if($("#test1").val() == "")
+            {
+                alert("Number Field is missing");
+                return false;
+            }
+            if($("#test2").val() == "")
+            {
+                alert("Name Field is missing");
+                return false;
+            }
+            else {
+                $('#tbl_input').submit(function(event){
+                      event.preventDefault();
+                      $.ajax({
+                          type: 'GET',
+                          url: 'dbh.php',
+                          data: $(this).serialize(),
+                          success: function(data){
+                              $('#ud_output').html(data);
+                          }
+                      });
+                
+                  });                
+            }
+    
+        });
+        
+    });
+         
+                     
+    
              
               </Script>
           

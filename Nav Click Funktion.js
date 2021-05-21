@@ -49,12 +49,25 @@ function nav_türkis_click(){
     $(Nav_Türkis).siblings().removeClass('active');
 }
 function nav_creat_click(){
-    $(Nav_erstellen).addClass('active');
-    $(Nav_erstellen).siblings().removeClass('active');
+     
+
+    if($("#test1").val() == "")
+    {
+        alert("Number Field is missing");
+        return false;
+    }
+    if($("#test2").val() == "")
+    {
+        alert("Name Field is missing");
+        return false;
+    }
+    else {
+      
+        // Code for Insert to SQL 
+    }
+
+
 }
-
-//#endregion
-
 
 
 
@@ -64,15 +77,3 @@ function nav_creat_click(){
   
 
 
-  /* Test for Hiding
-  var hidden = false;
-    function action() {
-        hidden = !hidden;
-        if(hidden) {
-            document.getElementById('togglee').style.visibility = 'hidden';
-        } else {
-            document.getElementById('togglee').style.visibility = 'visible';
-        }
-    }
-
-    */

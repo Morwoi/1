@@ -48,6 +48,11 @@ function nav_türkis_click(){
     $(Nav_Türkis).addClass('active');
     $(Nav_Türkis).siblings().removeClass('active');
 }
+function nav_erstellen_click(){
+    $(Nav_erstellen).addClass('active');
+    $(Nav_erstellen).siblings().removeClass('active');
+}
+
 //#endregion
 
 

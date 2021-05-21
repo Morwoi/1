@@ -31,7 +31,7 @@
         <a href="#Löschen"id="Nav_löschen" >löschen</a>
         <a href="#Drucken"id="Nav_drucken">drucken</a>
         <a href="#Erstellen"id="Nav_erstellen" onClick="nav_erstellen_click();">erstellen</a>
-      </div>
+     </div>
 
 <!-- End of Header -->
 <br>

@@ -30,7 +30,7 @@
         <a href="#Türkis"id="Nav_Türkis" onClick="nav_türkis_click();">Türkis</a>
         <a href="#Löschen"id="Nav_löschen" >löschen</a>
         <a href="#Drucken"id="Nav_drucken">drucken</a>
-        <a href="#Erstellen"id="Nav_erstellen" onClick="nav_erstellen_click();">erstellen</a>
+        <a href="#Creat" id="Nav_Creat" onClick="nav_creat_click();">erstellen</a>
      </div>
 
 <!-- End of Header -->

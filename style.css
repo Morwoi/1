@@ -64,16 +64,17 @@
       color: black;
       }
 
+     .topnav  a#Nav_Creat:hover {
+      background-color: rgb(88, 87, 99);
+      color: black;
+      }  
+        
     .topnav  a#Nav_drucken:hover {
       background-color: rgb(88, 87, 99);
       color: black;
       }
 
-    .topnav  a#Nav_erstellen:hover {
-      background-color: rgb(88, 87, 99);
-      color: black;
-      }  
-      
+  
     /*#endregion*/
 
   /* Add a color to the active/current link */

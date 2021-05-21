@@ -36,6 +36,8 @@
 <br>
 
 
+
+
 <!-- Start of Tabel  -->
 <!-- Head  -->
 <table class="tbl_customer">
@@ -51,59 +53,23 @@
             <th> Gebiet </th>
         </thead> 
 <!-- Tabel Input -->
-        <form id="tbl_input"> 
-        <td><Input name="tbl_input_Id" size="5"/></td>
-        <td><Input type="text" name="tbl_input_Nummer" size="5"/></td>
-        <td><Input type="text" name="tbl_input_Name"/></td>
-        <td><Input type="text" name="tbl_input_Adresse"/></td>
-        <td><Input type="number" name="tbl_input_Telefonnummer"/></td>
-        <td><Input type="text" name="tbl_input_Ort" size="5"/></td>
-        <td><Input type="number" name="tbl_input_PLZ" size="5"/></td>
-        <td><Input type="tex" name="tbl_input_Bemerkung"/></td>
-        <td><Input type="text" name="tbl_input_Gebiet"size="5"/></td>
+<tbody>
+<form id="tbl_input">
+        <td><text name="input_Id" size="5"/></td>
+        <td><Input type="text" name="input_Nummer" size="5"/></td>
+        <td><Input type="text" name="input_Name"/></td>
+        <td><Input type="text" name="input_Adresse"/></td>
+        <td><Input type="number" name="input_Telefonnummer"/></td>
+        <td><Input type="text" name="input_Ort" size="5"/></td>
+        <td><Input type="number" name="input_PLZ" size="5"/></td>
+        <td><Input type="tex" name="input_Bemerkung"/></td>
+        <td><Input type="text" name="input_Gebiet"size="5"/></td>
 
         <input type="submit" name="senden" id="senden">
-
-        <script>
-          
-// Error in this Code when Site is Reload and Input is empty DB still calls Entry
-// When you press "Senden" with empty Input sill calls DB Entry 
-     
-    function required(tbl_input_Nummer) 
-   {
-     if (tbl_input_Nummer.value == "")
-      { 
-         alert("Not 0");  	
-         return false; 
-      }  	
-      return true; 
-      
-    } 
-    
-
-   if(required==true){  
-    $('#tbl_input').submit(function(event){
-        event.preventDefault();
-        $.ajax({
-            type: 'GET',
-            url: 'dbh.php',
-            data: $(this).serialize(),
-            success: function(data){
-                $('#ud_output').html(data);
-            }
-        });
-        $('#tbl_input')[0].reset();
-
-    });
-   }
-
-// Error Ende
-   
-    </Script>
-
-
-
         </form>
+
+</tbody>
+        
 <!-- Tabel Input End -->
         
 <!-- Logik for SQL DATA  -->
@@ -133,6 +99,31 @@
                 </tbody> 
     </table>
 
+    <script>
+          
+          // Error in this Code when Site is Reload and Input is empty DB still calls Entry
+          // When you press "Senden" with empty Input sill calls DB Entry 
+               
+              $('#tbl_input').submit(function(event){
+                  event.preventDefault();
+                  $.ajax({
+                      type: 'GET',
+                      url: 'dbh.php',
+                      data: $(this).serialize(),
+                      success: function(data){
+                          $('#ud_output').html(data);
+                      }
+                  });
+                  $('#tbl_input')[0].reset();
+          
+              });
+             
+          
+          // Error Ende
+             
+              </Script>
+          
+          
 <!-- End of Tabel  -->
 </body>
 </html>

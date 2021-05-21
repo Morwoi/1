@@ -6,10 +6,10 @@ $username = "root";
 $passwort = "";
 $dbname = "ajax";
 
-$conn = mysqli_connect($servername, $username, $passwort, $dbname); 
+$db = mysqli_connect($servername, $username, $passwort, $dbname); 
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if ($db->connect_error) {
+    die("Connection failed: " . $db->connect_error);
 }
   
 
@@ -24,7 +24,7 @@ if ($conn->connect_error) {
     $adresse= htmlspecialchars($_GET['input_Adresse']);
     $telefon= htmlspecialchars($_GET['input_Telefonnummer']);
     $ort= htmlspecialchars($_GET['input_Ort']);
-    $plz= htmlspecialchars($_GET['nput_PLZ']);
+    $plz= htmlspecialchars($_GET['input_PLZ']);
     $bemerkung= htmlspecialchars($_GET['input_Bemerkung']);
     $gebiet= htmlspecialchars($_GET['input_Gebiet']);
   
@@ -42,8 +42,8 @@ if ($conn->connect_error) {
                     Gebiet = "'.$gebiet.'"';
 
     //SQL EINFÜGEN
-    $insert = mysqli_query($conn, $sql_insert);
-
+    $insert = mysqli_query($db, $sql_insert);
+    // SQL 
   }
  
 

@@ -56,14 +56,14 @@
 <tbody>
 <form id="tbl_input">
         <td><text name="input_Id" size="5"/></td>
-        <td><Input type="text" name="input_Nummer" size="5"/></td>
-        <td><Input type="text" name="input_Name"/></td>
-        <td><Input type="text" name="input_Adresse"/></td>
-        <td><Input type="number" name="input_Telefonnummer"/></td>
-        <td><Input type="text" name="input_Ort" size="5"/></td>
-        <td><Input type="number" name="input_PLZ" size="5"/></td>
-        <td><Input type="tex" name="input_Bemerkung"/></td>
-        <td><Input type="text" name="input_Gebiet"size="5"/></td>
+        <td><Input id="test1" type="text" name="input_Nummer" size="5" placeholder="Nummer"/></td>
+        <td><Input id="test2" type="text" name="input_Name" placeholder="Nummer"/></td>
+        <td><Input type="text" name="input_Adresse" placeholder="Nummer"/></td>
+        <td><Input type="number" name="input_Telefonnummer" placeholder="Nummer"/></td>
+        <td><Input type="text" name="input_Ort" size="5" placeholder="Nummer"/></td>
+        <td><Input type="number" name="input_PLZ" size="5" placeholder="Nummer"/></td>
+        <td><Input type="tex" name="input_Bemerkung" placeholder="Nummer"/></td>
+        <td><Input type="text" name="input_Gebiet"size="5" placeholder="Nummer"/></td>
 
         <input type="submit" name="senden" id="senden">
         </form>
@@ -76,7 +76,7 @@
 
         <?php   // LOOPTILL END OF DATA 
             $sql = "SELECT * FROM Customer";
-            $result = mysqli_query($conn, $sql);
+            $result = mysqli_query($db, $sql);
             while($rows=$result->fetch_assoc())
         {
         ?>
@@ -103,8 +103,22 @@
           
           // Error in this Code when Site is Reload and Input is empty DB still calls Entry
           // When you press "Senden" with empty Input sill calls DB Entry 
-               
-              $('#tbl_input').submit(function(event){
+        
+
+          $(document).ready(function() {
+    $("#tbl_input").submit( function() {
+        if($("#test1").val() == "")
+        {
+            alert("Number Field is missing");
+            return false;
+        }
+        if($("#test2").val() == "")
+        {
+            alert("Name Field is missing");
+            return false;
+        }
+        else {
+            $('#tbl_input').submit(function(event){
                   event.preventDefault();
                   $.ajax({
                       type: 'GET',
@@ -118,7 +132,19 @@
           
               });
              
+           
+        }
+
+    });
+    
+});
           
+          
+           
+         
+            
+        
+                 
           // Error Ende
              
               </Script>

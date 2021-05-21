@@ -1,5 +1,6 @@
 <?php include 'dbh.php'; ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -102,8 +103,7 @@
     <script>
           
           // Error in this Code when Site is Reload and Input is empty DB still calls Entry
-          // When you press "Senden" with empty Input sill calls DB Entry 
-        
+                
 
           $(document).ready(function() {
     $("#tbl_input").submit( function() {
@@ -128,21 +128,15 @@
                           $('#ud_output').html(data);
                       }
                   });
-                  $('#tbl_input')[0].reset();
-          
-              });
-             
-           
+            
+              });                
         }
 
     });
     
 });
           
-          
-           
-         
-            
+                     
         
                  
           // Error Ende

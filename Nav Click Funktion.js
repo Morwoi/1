@@ -64,6 +64,7 @@ function nav_creat_click(){
     else {
       
         // Code for Insert to SQL 
+        // Dont know how
     }
 
 

@@ -43,8 +43,8 @@ if ($db->connect_error) {
 
     //SQL EINFÜGEN
     $insert = mysqli_query($db, $sql_insert);
-    // SQL 
-
+    
+    // Changes the Link to Original to prevent multiple sending to SQL 
     header("location: test.php");
   }
  

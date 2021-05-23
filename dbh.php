@@ -12,9 +12,7 @@ if ($db->connect_error) {
     die("Connection failed: " . $db->connect_error);
 }
   
-
-
-  // Function to insert Data from TBL Header Input 
+// Function to insert Data from TBL Header Input 
 
   if(isset($_GET['input_Nummer']) && isset($_GET['input_Name']))  {
 

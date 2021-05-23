@@ -34,10 +34,6 @@
      </div>
 
 <!-- End of Header -->
-<br>
-<br>
-
-
 
 
 <!-- Start of Tabel  -->
@@ -67,7 +63,6 @@
         <td><Input type="tex" name="input_Bemerkung" placeholder="Nummer"/></td>
         <td><Input type="text" name="input_Gebiet"size="5" placeholder="Nummer"/></td>
 
-       <input type="submit" name="senden" id="senden"> 
 
         </form>
 
@@ -107,38 +102,6 @@
         
         // Wrapp this in a Button in NAV Click 
           
-     
-        $("#tbl_input").submit( function() {
-            if($("#test1").val() == "")
-            {
-                alert("Number Field is missing");
-                return false;
-            }
-            if($("#test2").val() == "")
-            {
-                alert("Name Field is missing");
-                return false;
-            }
-            else {
-                $('#tbl_input').submit(function(event){
-                      event.preventDefault();
-                      
-                      $.ajax({
-                          type: 'GET',
-                          url: 'dbh.php',
-                          data: $(this).serialize(),
-                          success: function(data){
-                              $('#ud_output').html(data);
-                          }
-                      });
-                  }
-                );                                
-            }
-    
-      });
-        
-         
-                     
     
              
               </Script>

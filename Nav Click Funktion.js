@@ -64,9 +64,18 @@ function nav_creat_click(){
     }
     else {
       
-   
-  }
+       
+     myFunction()
+        
+
+    }
 
 }
+
+function myFunction() {
+    document.getElementById("tbl_input").submit();
+}
+   
+
 
 

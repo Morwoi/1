@@ -72,6 +72,7 @@ function nav_creat_click(){
 
 }
 
+// Submits Tbl_input
 function myFunction() {
     document.getElementById("tbl_input").submit();
 }

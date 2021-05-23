@@ -4,10 +4,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="style.css" rel="Stylesheet" />
+    <!-- Style -->
+    <link href="style.css" rel="Stylesheet" /> 
+
+     <!-- Js Files -->
     <script src='Nav Click Funktion.js'></script>
-    
+    <script src='delet_from_Table.js'></script>
+     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+
+
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -99,7 +107,15 @@
 
     <script>
 
-        
+// Select visiual for Table        
+
+$('tr').click(function() {
+    $(this).find('td').toggleClass('phs-box-primary');
+    document.getElementsByTagName("tr")[this].remove();
+
+  
+});
+
         // Wrapp this in a Button in NAV Click 
           
     

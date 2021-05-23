@@ -102,10 +102,16 @@
   font: normal 18px Arial, sans-serif;
 }
 
-/* Body design */
+/* Table Body design */
 .tbl_customer tbody td {
   border: solid 1px #e5e7e7;
   color: rgb(3, 3, 3);
   padding: 10px;
   text-shadow: 1px 1px 1px #fff;
+}
+
+/*Design for Table select*/
+.phs-box-primary {
+  background-color: #ffc300;
+  color: #52514f;
 }

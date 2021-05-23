@@ -49,7 +49,8 @@ function nav_türkis_click(){
     $(Nav_Türkis).siblings().removeClass('active');
 }
 function nav_creat_click(){
-     
+    $(Nav_Creat).addClass('active');
+    $(Nav_Creat).siblings().removeClass('active');
 
     if($("#test1").val() == "")
     {
@@ -63,18 +64,9 @@ function nav_creat_click(){
     }
     else {
       
-        // Code for Insert to SQL 
-        // Dont know how
-    }
-
+   
+  }
 
 }
-
-
-
-
-
-
-  
 
 

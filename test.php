@@ -107,7 +107,7 @@
         
         // Wrapp this in a Button in NAV Click 
           
-          $(document).ready(function() {
+     
         $("#tbl_input").submit( function() {
             if($("#test1").val() == "")
             {
@@ -122,6 +122,7 @@
             else {
                 $('#tbl_input').submit(function(event){
                       event.preventDefault();
+                      
                       $.ajax({
                           type: 'GET',
                           url: 'dbh.php',
@@ -130,13 +131,12 @@
                               $('#ud_output').html(data);
                           }
                       });
-                
-                  });                
+                  }
+                );                                
             }
     
-        });
+      });
         
-    });
          
                      
     

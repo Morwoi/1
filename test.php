@@ -94,11 +94,11 @@
                         <td id="tbl_Nummer"><?php echo $rows['Nummer'];?></td>
                         <td id="tbl_Name"><?php echo $rows['Name'];?></td>
                         <td id="tbl_Adresse"><?php echo $rows['Adresse'];?></td>
-                        <td><?php echo $rows['Telefonnummer'];?></td>
-                        <td><?php echo $rows['Ort'];?></td>
-                        <td><?php echo $rows['PLZ'];?></td>
-                        <td><?php echo $rows['Bemerkung'];?></td>
-                        <td><?php echo $rows['Gebiet'];?></td>
+                        <td id="tbl_Telefonnummer"><?php echo $rows['Telefonnummer'];?></td>
+                        <td id="tbl_Ort"><?php echo $rows['Ort'];?></td>
+                        <td id="tbl_PLZ"><?php echo $rows['PLZ'];?></td>
+                        <td id="tbl_Bemerkung"><?php echo $rows['Bemerkung'];?></td>
+                        <td id="tbl_Gebiet"><?php echo $rows['Gebiet'];?></td>
                     </tr>
                     <?php
         }
@@ -116,9 +116,6 @@ $('tr').click(function() {
 
   
 });
-
-        // Wrapp this in a Button in NAV Click 
-          
     
              
               </Script>

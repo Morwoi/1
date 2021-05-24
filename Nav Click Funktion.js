@@ -14,6 +14,7 @@ function nav_gelb_click(){
 function nav_weiss_click(){
     $(Nav_Weiss).addClass('active');
     $(Nav_Weiss).siblings().removeClass('active');
+    changetabelbody_sql();
 }
 
 function nav_grün_click(){
@@ -76,9 +77,12 @@ function nav_creat_click(){
 function myFunction() {
     document.getElementById("tbl_input").submit();
 }
+
+// Change SQL retriev to....
    
-function changetabelbody_sql(){
-    document.getElementById("tbl_body").
+function changetabelbody_sql(){       
+
+    // Code missing
 }
 
 

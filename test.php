@@ -81,8 +81,11 @@
         
 <!-- Logik for SQL DATA  -->
 
-        <?php   // LOOPTILL END OF DATA 
-            $sql = "SELECT * FROM Customer";
+
+<!-- TO DO:   -->
+<!-- Creat Variable for Dornbirn  -->
+        <?php  
+            $sql = "SELECT * FROM `customer` WHERE Gebiet = 'Dornbirn'";
             $result = mysqli_query($db, $sql);
             while($rows=$result->fetch_assoc())
         {
@@ -107,8 +110,9 @@
     </table>
 
     <script>
-
-// Select visiual for Table        
+    
+// TODO:
+// Select visiual for Table and remove selectet with Button       
 
 $('tr').click(function() {
     $(this).find('td').toggleClass('phs-box-primary');

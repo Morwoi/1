@@ -52,12 +52,12 @@ function nav_creat_click(){
     $(Nav_Creat).addClass('active');
     $(Nav_Creat).siblings().removeClass('active');
 
-    if($("#test1").val() == "")
+    if($("#input_Nummer_id").val() == "")
     {
         alert("Number Field is missing");
         return false;
     }
-    if($("#test2").val() == "")
+    if($("#input_Name_id").val() == "")
     {
         alert("Name Field is missing");
         return false;
@@ -77,6 +77,9 @@ function myFunction() {
     document.getElementById("tbl_input").submit();
 }
    
+function changetabelbody_sql(){
+    document.getElementById("tbl_body").
+}
 
 
 

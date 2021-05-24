@@ -59,11 +59,12 @@
             <th> Gebiet </th>
         </thead> 
 <!-- Tabel Input -->
+
 <tbody>
 <form id="tbl_input">
         <td><text name="input_Id" size="5"/></td>
-        <td><Input id="test1" type="text" name="input_Nummer" size="5" placeholder="Nummer"/></td>
-        <td><Input id="test2" type="text" name="input_Name" placeholder="Nummer"/></td>
+        <td><Input id="input_Nummer_id" type="text" name="input_Nummer" size="5" placeholder="Nummer"/></td>
+        <td><Input id="input_Name_id" type="text" name="input_Name" placeholder="Nummer"/></td>
         <td><Input type="text" name="input_Adresse" placeholder="Nummer"/></td>
         <td><Input type="number" name="input_Telefonnummer" placeholder="Nummer"/></td>
         <td><Input type="text" name="input_Ort" size="5" placeholder="Nummer"/></td>
@@ -87,12 +88,12 @@
         {
         ?>
 <!-- Fill Tabel-->       
-                <tbody>
+                <tbody id="tbl_Body">
                     <tr>
-                        <td><?php echo $rows['Key'];?></td>
-                        <td><?php echo $rows['Nummer'];?></td>
-                        <td><?php echo $rows['Name'];?></td>
-                        <td><?php echo $rows['Adresse'];?></td>
+                        <td id="tbl_key" ><?php echo $rows['Key'];?></td>
+                        <td id="tbl_Nummer"><?php echo $rows['Nummer'];?></td>
+                        <td id="tbl_Name"><?php echo $rows['Name'];?></td>
+                        <td id="tbl_Adresse"><?php echo $rows['Adresse'];?></td>
                         <td><?php echo $rows['Telefonnummer'];?></td>
                         <td><?php echo $rows['Ort'];?></td>
                         <td><?php echo $rows['PLZ'];?></td>

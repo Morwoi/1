@@ -85,8 +85,7 @@
 <!-- TO DO:   -->
 <!-- Creat Variable for Dornbirn  -->
         <?php  
-            $dealID = $_GET['dealID']; 
-            $sql = "SELECT * FROM `customer` WHERE Gebiet = .$variable";
+            $sql = "SELECT * FROM `customer` WHERE Gebiet = 'Dornbirn'";
             $result = mysqli_query($db, $sql);
             while($rows=$result->fetch_assoc())
         {
@@ -111,7 +110,11 @@
     </table>
 
     <script>
-    
+
+ 
+
+
+
 // TODO:
 // Select visiual for Table and remove selectet with Button       
 

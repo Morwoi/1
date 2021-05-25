@@ -85,7 +85,8 @@
 <!-- TO DO:   -->
 <!-- Creat Variable for Dornbirn  -->
         <?php  
-            $sql = "SELECT * FROM `customer` WHERE Gebiet = 'Dornbirn'";
+            $dealID = $_GET['dealID']; 
+            $sql = "SELECT * FROM `customer` WHERE Gebiet = .$variable";
             $result = mysqli_query($db, $sql);
             while($rows=$result->fetch_assoc())
         {
@@ -120,7 +121,7 @@ $('tr').click(function() {
 
   
 });
-    
+
              
               </Script>
           

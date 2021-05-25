@@ -1,4 +1,3 @@
-  
 /* Nav Click Funktion vor active head */
 //#region
 function nav_home_click(){
@@ -9,9 +8,6 @@ function nav_home_click(){
 function nav_gelb_click(){
     $(Nav_Gelb).addClass('active');
     $(Nav_Gelb).siblings().removeClass('active');
-
-  
-   
 }
 
 function nav_weiss_click(){

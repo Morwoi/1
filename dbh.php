@@ -6,6 +6,9 @@ $username = "root";
 $passwort = "";
 $dbname = "ajax";
 
+// Variable for Region Filter
+$gebietname = "Dornbirn";
+
 $db = mysqli_connect($servername, $username, $passwort, $dbname); 
 
 if ($db->connect_error) {

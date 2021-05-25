@@ -80,13 +80,11 @@
 <!-- Tabel Input End -->
         
 
-<input id="prodId" name="prodId" type="hidden" value="Dornbirn">
 
 <!-- Logik for SQL DATA  -->
 <!-- TO DO:   -->
 <!-- Creat Variable for Dornbirn  -->
         <?php  
-           
             $sql = "SELECT * FROM customer WHERE Gebiet ='".$gebietname."'";
             $result = mysqli_query($db, $sql);
             while($rows=$result->fetch_assoc())

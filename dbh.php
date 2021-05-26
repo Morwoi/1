@@ -6,14 +6,17 @@ $username = "root";
 $passwort = "";
 $dbname = "ajax";
 
-// Variable for Region Filter
-$gebietname = "Dornbirn";
 
 $db = mysqli_connect($servername, $username, $passwort, $dbname); 
 
 if ($db->connect_error) {
     die("Connection failed: " . $db->connect_error);
 }
+
+// Variable for Region Filter
+$gebietname = "Dornbirn";
+
+
   
 // Function to insert Data from TBL Header Input 
 

@@ -55,7 +55,7 @@ $gebietname = "Dornbirn";
 
   //TO DO   
   //Creat Variable for Dornbirn  
- 
+  
   $sql = "SELECT * FROM customer";   
   $result = mysqli_query($db, $sql);
 

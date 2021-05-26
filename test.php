@@ -57,6 +57,7 @@
             <th> PLZ </th>
             <th> Bemerkung </th>
             <th> Gebiet </th>
+            <th> Farbe </th>   
         </thead> 
 <!-- Tabel Input -->
 
@@ -71,7 +72,7 @@
         <td><Input type="number" name="input_PLZ" size="5" placeholder="Nummer"/></td>
         <td><Input type="tex" name="input_Bemerkung" placeholder="Nummer"/></td>
         <td><Input type="text" name="input_Gebiet"size="5" placeholder="Nummer"/></td>
-
+        <td><Input type="text" name="input_Farbe"size="5" placeholder="Nummer"/></td>
 
         </form>
 
@@ -82,15 +83,13 @@
 
 
 <!-- Logik for SQL DATA  -->
-<!-- TO DO:   -->
-<!-- Creat Variable for Dornbirn  -->
-        <?php  
-            $sql = "SELECT * FROM customer WHERE Gebiet ='".$gebietname."'";
-            $result = mysqli_query($db, $sql);
-            while($rows=$result->fetch_assoc())
+
+        <?php           
+           while($rows=$result->fetch_assoc())
         {
         ?>
-<!-- Fill Tabel-->       
+<!-- Fill Tabel--> 
+                
                 <tbody id="tbl_Body">
                     <tr>
                         <td id="tbl_key" ><?php echo $rows['Key'];?></td>
@@ -102,6 +101,7 @@
                         <td id="tbl_PLZ"><?php echo $rows['PLZ'];?></td>
                         <td id="tbl_Bemerkung"><?php echo $rows['Bemerkung'];?></td>
                         <td id="tbl_Gebiet"><?php echo $rows['Gebiet'];?></td>
+                        <td id="tbl_Farbe"><?php echo $rows['Farbe'];?></td>
                     </tr>
                     <?php
         }

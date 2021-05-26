@@ -31,7 +31,7 @@ $gebietname = "Dornbirn";
     $plz= htmlspecialchars($_GET['input_PLZ']);
     $bemerkung= htmlspecialchars($_GET['input_Bemerkung']);
     $gebiet= htmlspecialchars($_GET['input_Gebiet']);
-  
+    $farbe= htmlspecialchars($_GET['input_Farbe']);
     
     //SQL STATMENET 
     $sql_insert = 'INSERT INTO customer SET
@@ -43,7 +43,8 @@ $gebietname = "Dornbirn";
                     Ort = "'.$ort.'",
                     PLZ = "'.$plz.'",
                     Bemerkung = "'.$bemerkung.'",
-                    Gebiet = "'.$gebiet.'"';
+                    Gebiet = "'.$gebiet.'",
+                    Farbe = "'.$farbe.'"';
 
     //SQL EINFÜGEN
     $insert = mysqli_query($db, $sql_insert);
@@ -51,6 +52,19 @@ $gebietname = "Dornbirn";
     // Changes the Link to Original to prevent multiple sending to SQL 
     header("location: test.php");
   }
- 
+  //TO DO   
+  //Creat Variable for Dornbirn  
+  $sql = "SELECT * FROM customer WHERE Gebiet ='".$gebietname."'";
+  $where = array();
+
+  if ($jobtype) $where[] = "`Dornbirn`  = '".$jobtype."'";
+
+  if ($industry ) $where[] = "`` = '".$industry."'";
+
+  if (!empty($where)) {
+      $sql .= " where " . implode (" and ",$where);
+  }
+
+  $result = mysqli_query($db, $sql);
 
   ?>

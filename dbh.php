@@ -52,19 +52,11 @@ $gebietname = "Dornbirn";
     // Changes the Link to Original to prevent multiple sending to SQL 
     header("location: test.php");
   }
+
   //TO DO   
   //Creat Variable for Dornbirn  
-  $sql = "SELECT * FROM customer WHERE Gebiet ='".$gebietname."'";
-  $where = array();
-
-  if ($jobtype) $where[] = "`Dornbirn`  = '".$jobtype."'";
-
-  if ($industry ) $where[] = "`` = '".$industry."'";
-
-  if (!empty($where)) {
-      $sql .= " where " . implode (" and ",$where);
-  }
-
+ 
+  $sql = "SELECT * FROM customer";   
   $result = mysqli_query($db, $sql);
 
   ?>

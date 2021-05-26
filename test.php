@@ -60,6 +60,13 @@
             <th> Farbe </th>   
         </thead> 
 <!-- Tabel Input -->
+<select name="Farbevar">
+                <option value="nullg" disabled selected hidden>Job Type</option>
+                <option value="Weiss">Weiss</option>
+                <option value="Blau">Blau</option>	
+                <option value="Gelb">Gelb</option>
+                <option value="Grün">Grün</option>
+</select>
 
 <tbody>
 <form id="tbl_input">
@@ -84,8 +91,8 @@
 
 <!-- Logik for SQL DATA  -->
 
-        <?php           
-           while($rows=$result->fetch_assoc())
+        <?php             
+            while($rows=$result->fetch_assoc())
         {
         ?>
 <!-- Fill Tabel--> 

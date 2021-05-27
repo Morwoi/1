@@ -48,6 +48,7 @@
 <!-- Head  -->
 <table class="tbl_customer">
        <thead>
+       <tr class="filters">
             <th> Id </th>
             <th> Nummer </th>
             <th> Name </th>
@@ -58,6 +59,8 @@
             <th> Bemerkung </th>
             <th> Gebiet </th>
             <th> Farbe </th>   
+        </tr>
+
         </thead> 
 <!-- Tabel Input -->
 

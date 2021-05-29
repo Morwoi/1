@@ -1,5 +1,11 @@
 <?php include 'dbh.php'; ?>
 
+<!-- TODO:
+
+delet Button
+updade Button (edit)
+Filter sql with Buttons 
+-->
 
 <!DOCTYPE html>
 <html lang="en">

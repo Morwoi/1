@@ -34,6 +34,7 @@ $gebietname = "Dornbirn";
     $farbe= htmlspecialchars($_GET['input_Farbe']);
     
     
+    
     //SQL STATMENET 
     $sql_insert = 'INSERT INTO customer SET
 

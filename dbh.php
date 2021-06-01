@@ -51,11 +51,10 @@ $gebietname = "Dornbirn";
     //SQL EINFÜGEN
     $insert = mysqli_query($db, $sql_insert);
     
-    
+
     // Changes the Link to Original to prevent multiple sending to SQL 
     header("location: Main.php");
   }
-
   
   //TO DO   
   //Creat Variable for Dornbirn  

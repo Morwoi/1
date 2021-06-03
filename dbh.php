@@ -22,6 +22,7 @@ $gebietname = "Dornbirn";
 
   if(isset($_GET['input_Nummer']) && isset($_GET['input_Name']))  {
 
+    
     //JAVASCRIPT AUS DEM CODE LÖSCHEN 
     $nummer= htmlspecialchars( $_GET['input_Nummer']);
     $name= htmlspecialchars($_GET['input_Name']);

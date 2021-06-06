@@ -4,7 +4,7 @@
 
 delet Button:
 How do i do this?
-
+-.-
 updade Button (edit)
 
 Filter sql with Buttons 

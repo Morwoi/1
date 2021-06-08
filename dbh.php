@@ -7,6 +7,7 @@ $passwort = "";
 $dbname = "ajax";
 
 
+
 $db = mysqli_connect($servername, $username, $passwort, $dbname); 
 
 if ($db->connect_error) {

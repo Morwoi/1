@@ -27,7 +27,8 @@ Filter sql with Buttons
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>     
+
   
 
 
@@ -71,7 +72,10 @@ Filter sql with Buttons
             <th> PLZ </th>
             <th> Bemerkung </th>
             <th> Gebiet </th>
-            <th> Farbe </th>   
+            <th> Farbe </th>  
+            <th width="20%" class="text-center">View Employee Details</th>
+            <th width="20%" class="text-center">Edit</th>
+
         </tr>
 
         </thead> 
@@ -121,6 +125,11 @@ Filter sql with Buttons
                         <td id="tbl_Bemerkung"><?php echo $rows['Bemerkung'];?></td>
                         <td id="tbl_Gebiet"><?php echo $rows['Gebiet'];?></td>
                         <td id="tbl_Farbe"><?php echo $rows['Farbe'];?></td>
+
+
+                        <td class="text-center"><input type="button" name="edit" value="Edit" id="<?php echo $row["id"]; ?>" class="btn btn-info edit_data" /></td>  
+                        <td class="text-center"><input type="button" name="view" value="view" id="<?php echo $row["id"]; ?>" class="btn btn-success view_data" /></td>  
+
                     </tr>
                     <?php
         }
@@ -128,9 +137,134 @@ Filter sql with Buttons
                 </tbody> 
     </table>
 
-    <script>
+<!-- Employee Details -->
+<div id="dataModal" class="modal fade">  
+      <div class="modal-dialog">  
+           <div class="modal-content">  
+                <div class="modal-header">  
+                <h4 class="modal-title">Employee Details</h4>  
+              <button type="button" class="close" data-dismiss="modal">&times;</button>  
+                 </div>  
+                <div class="modal-body" id="employee_detail">  
+                </div>  
+                <div class="modal-footer">  
+                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>  
+                </div>  
+           </div>  
+      </div>  
+ </div>  
+ <!-- /Employee Details -->
+ <!-- PHP Ajax Update MySQL Data Through Bootstrap Modal -->
+ <div id="add_data_Modal" class="modal fade">  
+      <div class="modal-dialog">  
+           <div class="modal-content">  
+                <div class="modal-header">  
+                       <h4 class="modal-title">PHP Ajax Update MySQL Data Through Bootstrap Modal</h4>  
+                       <button type="button" class="close" data-dismiss="modal">&times;</button>  
+                </div>  
+                <div class="modal-body">  
+                     <form method="post" id="insert_form">  
+                          <label>Enter Employee Name</label>  
+                          <input type="text" name="name" id="name" class="form-control" />  
+                          <br />  
+                          <label>Enter Employee Address</label>  
+                          <textarea name="address" id="address" class="form-control"></textarea>  
+                          <br />  
+                          <label>Select Gender</label>  
+                          <select name="gender" id="gender" class="form-control">  
+                               <option value="Male">Male</option>  
+                               <option value="Female">Female</option>  
+                          </select>  
+                          <br />  
+                          <label>Enter Designation</label>  
+                          <input type="text" name="designation" id="designation" class="form-control" />  
+                          <br />  
+                          <label>Enter Salary</label>  
+                          <input type="text" name="salary" id="salary" class="form-control" />  
+                          <br />  
+                          <input type="hidden" name="employee_id" id="employee_id" />  
+                          <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-success" />  
+                     </form>  
+                </div>  
+                <div class="modal-footer">  
+                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>  
+                </div>  
+           </div>  
+      </div>  
+ </div> 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>     
+<script>
 
-
+ $(document).ready(function() {
+    $('#add').click(function() {
+        $('#insert').val("Insert");
+        $('#insert_form')[0].reset();
+    });
+    $(document).on('click', '.edit_data', function() {
+        var employee_id = $(this).attr("id");
+        $.ajax({
+            url: "fetch.php",
+            method: "POST",
+            data: {
+                employee_id: employee_id
+            },
+            dataType: "json",
+            success: function(data) {
+                $('#name').val(data.name);
+                $('#address').val(data.address);
+                $('#gender').val(data.gender);
+                $('#designation').val(data.designation);
+                $('#salary').val(data.salary);
+                $('#employee_id').val(data.id);
+                $('#insert').val("Update");
+                $('#add_data_Modal').modal('show');
+            }
+        });
+    });
+    $('#insert_form').on("submit", function(event) {
+        event.preventDefault();
+        if ($('#name').val() == "") {
+            alert("Employee Name Required");
+        } else if ($('#address').val() == '') {
+            alert("Employee Address Required");
+        } else if ($('#designation').val() == '') {
+            alert("Employee Designation Required");
+        } else if ($('#salary').val() == '') {
+            alert("Employee Salary Required");
+        } else {
+            $.ajax({
+                url: "insert.php",
+                method: "POST",
+                data: $('#insert_form').serialize(),
+                beforeSend: function() {
+                    $('#insert').val("Inserting");
+                },
+                success: function(data) {
+                    $('#insert_form')[0].reset();
+                    $('#add_data_Modal').modal('hide');
+                    $('#employee_table').html(data);
+                }
+            });
+        }
+    });
+    $(document).on('click', '.view_data', function() {
+        var employee_id = $(this).attr("id");
+        if (employee_id != '') {
+            $.ajax({
+                url: "select.php",
+                method: "POST",
+                data: {
+                    employee_id: employee_id
+                },
+                success: function(data) {
+                    $('#employee_detail').html(data);
+                    $('#dataModal').modal('show');
+                }
+            });
+        }
+    });
+});
 
 
 

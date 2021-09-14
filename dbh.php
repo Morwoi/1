@@ -1,14 +1,6 @@
 <?php
 
-// Server Connection
-$servername = "localhost";
-$username = "root";
-$passwort = "";
-$dbname = "ajax";
-
-
-
-$db = mysqli_connect($servername, $username, $passwort, $dbname); 
+include 'conn.php'; // MySQL Connection
 
 if ($db->connect_error) {
     die("Connection failed: " . $db->connect_error);
